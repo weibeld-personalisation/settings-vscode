@@ -20,5 +20,6 @@
     "editor.fontSize": 13,
     "aws.suppressPrompts": {
         "codeWhispererNewWelcomeMessage": true
-    }
+    },
+    "git.openRepositoryInParentFolders": "never"
 }
