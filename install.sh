@@ -1,14 +1,16 @@
 #!/bin/bash
-# Install VSCode settings and extensions from this repository to the system.
+# Install VSCode settings and customisations from this repo to the local system.
 
 [[ -f settings.json && -f extensions.json ]] || { echo "Error: must be run from repository root"; exit 1; }
 
-# macOS
-target=~/Library/Application\ Support/Code/User/settings.json
-echo "Installing settings.json to $target"
-cp settings.json "$target"
+install() {
+  if [[ -f "$(basename "$1")" ]]; then
+    echo "Installing $(basename "$1") to $1..."
+    cp "$(basename "$1")" "$1"
+  fi
+}
 
 # macOS
-target=~/.vscode/extensions/extensions.json
-echo "Installing extensions.json to $target"
-cp extensions.json "$target"
+install ~/Library/Application\ Support/Code/User/settings.json
+install ~/Library/Application\ Support/Code/User/keybindings.json
+install ~/.vscode/extensions/extensions.json

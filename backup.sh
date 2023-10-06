@@ -1,12 +1,16 @@
 #!/bin/bash
-# Back up current VSCode settings and extensions to this repository. 
+# Back up VSCode settings and customisations from local system to this repo.
 
 [[ -d .git ]] || { echo "Error: must be run from repository root"; exit 1; }
 
-# macOS
-echo "Backing up settings.json"
-cp ~/Library/Application\ Support/Code/User/settings.json settings.json
+backup() {
+  if [[ -f "$1" ]]; then
+    echo "Backing up $1..."
+    cp "$1" .
+  fi
+}
 
 # macOS
-echo "Backing up extensions.json"
-cp ~/.vscode/extensions/extensions.json extensions.json
+backup ~/Library/Application\ Support/Code/User/settings.json
+backup ~/Library/Application\ Support/Code/User/keybindings.json
+backup ~/.vscode/extensions/extensions.json
