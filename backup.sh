@@ -4,9 +4,14 @@
 [[ -d .git ]] || { echo "Error: must be run from repository root"; exit 1; }
 
 backup() {
-  if [[ -f "$1" ]]; then
-    echo "Backing up $1..."
-    cp "$1" .
+  local source=$1
+  if [[ -f "$source" ]]; then
+    if diff "$source" "$(basename "$source")" &>/dev/null; then
+      echo "No changes in $source"
+    else
+      echo "Backing up $source..."
+      cp "$source" .
+    fi
   fi
 }
 

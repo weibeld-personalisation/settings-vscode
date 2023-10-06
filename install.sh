@@ -4,9 +4,15 @@
 [[ -f settings.json && -f extensions.json ]] || { echo "Error: must be run from repository root"; exit 1; }
 
 install() {
-  if [[ -f "$(basename "$1")" ]]; then
-    echo "Installing $(basename "$1") to $1..."
-    cp "$(basename "$1")" "$1"
+  local target=$1
+  local source=$(basename "$target")
+  if [[ -f "$source" ]]; then
+    if diff "$source" "$target" &>/dev/null; then
+      echo "No changes in $source"
+    else
+      echo "Installing $source to $target..."
+      cp "$source" "$target"
+    fi
   fi
 }
 
