@@ -17,5 +17,8 @@
     ],
     "extensions.ignoreRecommendations": true,
     "workbench.startupEditor": "none",
-    "editor.fontSize": 13
+    "editor.fontSize": 13,
+    "aws.suppressPrompts": {
+        "codeWhispererNewWelcomeMessage": true
+    }
 }
