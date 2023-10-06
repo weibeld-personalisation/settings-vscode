@@ -1,0 +1,33 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+c",
+        "command": "aws.codeWhisperer",
+        "when": "CODEWHISPERER_ENABLED && editorTextFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "-aws.codeWhisperer",
+        "when": "CODEWHISPERER_ENABLED && editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "editor.action.inlineSuggest.showNext",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "right",
+        "command": "-editor.action.inlineSuggest.showNext",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "editor.action.inlineSuggest.showPrevious",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "left",
+        "command": "-editor.action.inlineSuggest.showPrevious",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    }
+]
