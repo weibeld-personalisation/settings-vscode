@@ -16,5 +16,6 @@
         80
     ],
     "extensions.ignoreRecommendations": true,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "editor.fontSize": 13
 }
