@@ -1,0 +1,20 @@
+{
+    "vim.leader": "<space>",
+    "vim.vimrc.enable": true,  
+    "vim.vimrc.path": "~/.vimrc",
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "vim.neovimConfigPath": "~/.vimrc",
+    "vim.surround": false,
+    "vim.camelCaseMotion.enable": true,
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)",
+    "editor.rulers": [
+        80
+    ],
+    "extensions.ignoreRecommendations": true,
+    "workbench.startupEditor": "none"
+}
